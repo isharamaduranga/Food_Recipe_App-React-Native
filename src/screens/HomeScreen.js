@@ -49,6 +49,8 @@ export default function HomeScreen() {
     };
 
 
+
+
     return (<View className="flex-1  bg-white">
             <StatusBar style={"dark"}/>
             <ScrollView
