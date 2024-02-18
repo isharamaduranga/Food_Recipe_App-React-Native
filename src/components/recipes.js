@@ -4,6 +4,7 @@ import {heightPercentageToDP as hp} from "react-native-responsive-screen";
 import MasonryList from '@react-native-seoul/masonry-list';
 import {mealData} from "../constanats";
 import Animated, {FadeInDown} from 'react-native-reanimated';
+import Loading from "./loading";
 
 export function Recipes({meals,categories}) {
     return (
@@ -13,8 +14,11 @@ export function Recipes({meals,categories}) {
             </Text>
             <View>
                 {categories.length === 0 || meals.length === 0 ?
-                    null :
-                    (<MasonryList
+                    (
+                        <Loading size={'large'} className={"mt-20"}/>
+                    ) :
+                    (
+                        <MasonryList
                         data={meals}
                         keyExtractor={(item) => item.idMeal}
                         numColumns={2}
@@ -24,7 +28,8 @@ export function Recipes({meals,categories}) {
                         // onRefresh={() => refetch({first: ITEM_CNT})}
                         onEndReachedThreshold={0.1}
                         // onEndReached={() => loadNext(ITEM_CNT)}
-                    />)}
+                    />
+                    )}
             </View>
         </View>);
 }
