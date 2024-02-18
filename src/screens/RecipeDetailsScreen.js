@@ -215,7 +215,25 @@ export default function RecipeDetailsScreen(props) {
                     </Text>
                 </Animated.View>
 
+                {/* recipe video */}
+                {
+                    meal.strYoutube && (
+                        <Animated.View entering={FadeInDown.delay(400).duration(700).springify().damping(12)}
+                                       className={"space-y-4"}>
+                            <Text style={{fontSize: hp(2.5)}} className={"font-bold flex-1 text-neutral-700"}>
+                                Recipe Video
+                            </Text>
 
+                            <View>
+                                <YouTubeIframe
+                                videoId={getYoutubeVideoId(meal.strYoutube)}
+                                height={hp(30)}
+                                />
+
+                            </View>
+                        </Animated.View>
+                    )
+                }
 
             </View>
 
