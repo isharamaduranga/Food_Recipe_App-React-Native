@@ -66,7 +66,7 @@ export default function RecipeDetailsScreen(props) {
         <View className={"flex-row justify-center"}>
             <Animated.Image
                 source={{uri: item.strMealThumb}}
-                sharedTransitionTag={item.strMeal}
+                sharedTransitionTag="tag"
                 style={{
                     width: wp(98),
                     height: hp(50),

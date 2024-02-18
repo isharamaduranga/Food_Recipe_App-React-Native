@@ -18,7 +18,7 @@ export default function WelcomeScreen() {
     setTimeout(()=> ring1Padding.value = withSpring(ring1Padding.value+hp(5)),100 );
     setTimeout(()=> ring2Padding.value = withSpring(ring2Padding.value+hp(5.5)),300 );
 
-    setTimeout(() => navigation.navigate('Home'),1500)
+    setTimeout(() => navigation.navigate('Home'),2000)
   },[])
 
   return (
@@ -27,10 +27,10 @@ export default function WelcomeScreen() {
 
       {/* logo image with rings */}
       <Animated.View className="bg-white/20 rounded-full" style={{padding:ring2Padding}}>
-        <Animated.View className="bg-white/20 rounded-full"style={{padding:ring1Padding}}>
+        <Animated.View className="bg-white/30 rounded-full"style={{padding:ring1Padding}}>
           <Image
             source={require("../../assets/images/meal.png")}
-            style={{ width: hp(22), height: hp(22) }}
+            style={{ width: hp(24), height: hp(24) }}
           />
         </Animated.View>
       </Animated.View>
